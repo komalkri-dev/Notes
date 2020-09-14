@@ -12,6 +12,8 @@ def index(request):
     if request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
+
+            form.save(commit=False)
             form.save()
             
         return redirect('/')
@@ -28,6 +30,7 @@ def updateTask(request, Private_key):
     if request.method == 'POST':
         form = TaskForm(request.POST, instance=task)
         if form.is_valid():
+            form.save(commit=False)
             form.save()
             
             return redirect('/')
