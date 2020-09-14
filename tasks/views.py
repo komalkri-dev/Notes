@@ -30,7 +30,7 @@ def updateTask(request, Private_key):
         if form.is_valid():
             form.save()
             
-        return redirect('/')
+            return redirect('/')
 
 
     context = {'form': form}
