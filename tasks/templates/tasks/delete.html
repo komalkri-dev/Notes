@@ -1,12 +1,56 @@
-<p>
-    Are you sure you want to delete "{{item}}"
-</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-<a href="{% url 'list' %}">Cancel</a>
-<div class="del_confirm">
+<style>
+    body{
+        background-color:#d3d3d3;
+    }
+
+    .heading {
+        font-size: 24px;
+        text-align: center;
+        padding-bottom: 24px;
+    }
+    
+    .center-column{
+        width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        padding-bottom: 4px;
+        background-color: #fcf9f9;
+        border-radius: 4px;
+        box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.45);
+    }
+
+    .btn-together {
+        display: flex;
+        padding-top: 16px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .prompt-text {
+        text-align: center;
+        font-weight: 16px;
+    }
+
+    .title-text {
+        font-weight: bold;
+    }
+</style>
+
+<div class="del_confirm center-column">
+    <div class="heading">Delete Note</div>
+    
+    <p class="prompt-text">
+        Are you sure you want to delete "<span class="title-text">{{item}}</span>"
+    </p>
+
     <form method="POST" action="">
-        {% csrf_token %}
-        <input class="btn btn-info" type="submit" name = "Confirm">
+        <div class="btn-together">
+            <a href="{% url 'list' %}">Cancel</a>
+            {% csrf_token %}
+            <input class="btn btn-info" type="submit" name = "Confirm">
+        </div>
     </form>
 
 </div>

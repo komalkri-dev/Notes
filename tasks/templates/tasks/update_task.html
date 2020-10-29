@@ -1,8 +1,52 @@
-<h3>Update Task</h3>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-<form method= "POST" action="">
-    {% csrf_token %}
+<style>
+    body{
+        background-color:#d3d3d3;
+    }
 
-    {{form}}
-    <input type="submit" name="Update Task">
-</form>
+    input[type=text]{
+        width: 100%;
+        padding: 12px 16px;
+        margin-bottom: 12px;
+        box-sizing: border-box;
+    }
+
+    input[type=checkbox]{
+        margin: 8px;
+    }
+
+    input[type=submit]{
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    input::placeholder{
+        color: #a9a9a9;
+    }
+
+    .heading {
+        font-size: 24px;
+        text-align: center;
+        padding-bottom: 16px;
+    }
+    
+    .center-column{
+        width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fcf9f9;
+        border-radius: 4px;
+        box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.45);
+    }
+</style>
+
+<div class ='center-column'>
+    <div class="heading">Update Note</div>
+    <form method= "POST" action="">
+        {% csrf_token %}
+
+        {{form}}
+        <input class="btn btn-info" type="submit" name="Update Task">
+    </form>
+</div>
